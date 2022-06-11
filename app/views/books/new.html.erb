@@ -4,9 +4,10 @@
 <p>Body</p>
 
 
-<h2>New book</h2>
-<%= form_with model:@book do|f|%>
 
+
+<h2>New book</h2>
+<%= form_with model: @book do|f|%>
 
 <h4>Title</h4>
  <%= f.text_field :title %>
@@ -16,4 +17,5 @@
  <br>
  <%= f.submit 'Create Book' %>
 <%end%>
+
 

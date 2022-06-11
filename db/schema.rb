@@ -20,3 +20,4 @@ ActiveRecord::Schema.define(version: 2022_06_10_121838) do
   end
 
 end
+# テーブルがどのようになっているかを確認するためのファイル,編集不可
