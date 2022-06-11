@@ -3,10 +3,17 @@
 
  <% @books.each do|book|%>
  <p>Title</p>
- <span><%= book.title%></span>
+ <span>
+  <%= book.title%>
+  <!--:id」がどんな値なのかを指定しないといけない-->
+  <%= link_to book.title,show_path(book.id) %>
 
  <p>Body</p>
- <span><%= book.body%></span>
+ <span>
+ <%= book.body%>
+ <%= link_to book.body, show_path(book.id)%>
+ </span>
+ 
  <%end%>
 
 <h2>New book</h2>
