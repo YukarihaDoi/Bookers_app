@@ -7,6 +7,7 @@ class BooksController < ApplicationController
   
   
   def index
+    @books = Book.all
   end
   
   # 新規作成（コントローラ内)
