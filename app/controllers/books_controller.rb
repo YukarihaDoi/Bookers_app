@@ -1,9 +1,19 @@
 class BooksController < ApplicationController
-
+ 
+  # 新規作成(画面内)
+  def new
+  @book = Book.new
+  end
+  
+  
   def index
   end
-
-  def new
+  
+  # 新規作成（コントローラ内)
+  def create
+    book = Book.new(book_params)
+    book.save
+    redirect_to '/top'
   end
 
   def show
@@ -14,11 +24,11 @@ class BooksController < ApplicationController
   end
 
   # ストロングパラメータ
-  # private
+   private
 
-  # def book_params
-  #   params.require(:book).permit(:title, :body)
-  # end
+   def book_params
+     params.require(:book).permit(:title, :body)
+   end
 
 # フォーム画面を表示する(get)
 # フォーム(form_with)にデータを入力し、送信する(post)
