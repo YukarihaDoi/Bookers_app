@@ -9,8 +9,11 @@
 <p><%= @book.body %></p>
 
 <!--%= link_to edit, "/books/edit" %-->
-<a herf="/books/edit">edit</a>
 
+<a herf="/books/edit">edit</a>
+<!--%= link_to "edit", edit_book_path(@book.id) %>-->
+<!--%= link_to "show", show_path(@book.id) %>-->
+ <%= link_to "destroy", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>-->
 
 
 <p>edit|back</p>

@@ -1,23 +1,43 @@
-<p>Book was successfully destroyed.</p>
+<!--エラー文-->
+<!--<p>Book was successfully destroyed.</p>-->
+
 <h1>Books</h1>
 
  <% @books.each do|book|%>
+
  <p>Title</p>
  <span>
-  <%= book.title%>
-  <!--:id」がどんな値なのかを指定しないといけない-->
-  <%= link_to book.title,show_path(book.id) %>
+   <%= link_to book.title,show_path(book.id) %>
+ </span>
 
  <p>Body</p>
  <span>
- <%= book.body%>
  <%= link_to book.body, show_path(book.id)%>
  </span>
- 
+
+
+ <p>show</p>
+ <span>
+  <%= link_to show, show_path(book.id)%>
+ </span>
+ <p>edit</p>
+ <span>
+  <%= link_to edit, show_path(book.id)%>
+ </span>
+ <p>destroy</p>
+ <span>
+  <%= link_to destroy, show_path(book.id)%>
+ </span>
+
+
  <%end%>
 
+<!-- link_to '表示するテキスト', URL, method: :patch -->
+<!--HTTPメソッドがPATCHでURLが同じ-->
+<!--という条件で実行するべきアクションを探して実行してくれます。-->
+
 <h2>New book</h2>
-<%= form_with model: @book do|f|%>
+<%= form_with model: @book ,url: create_path, method: :post do|f|%>
 
 <h4>Title</h4>
  <%= f.text_field :title %>
