@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   # 新規作成(画面内)
   def new
   @book = Book.new
+  @books = Book.all
   end
   
   
