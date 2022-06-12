@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
 
-  get '/top' =>'homes#top'
-  # OK
+  get 'books/top' => 'homes#top'
+  get 'books/new'  => 'books#new'
+  get 'books/index'  => 'books#index'
+  get 'books/show'  => 'books#show'
+  get 'books/edit'  => 'books#edit'
 
-  get 'a/books' => 'books#index',as: 'index'
-  post '/a'=> 'books#create',as: 'create'
-
-  delete 'a/books/:id' => 'books#destroy', as: 'destroy_book'
-  get 'a/books/:id' => 'books#show',as: 'show'
-
-  get 'a/books/:id/edit' => 'books#edit' , as: 'edit_book'
-  patch 'a/books/:id' => 'books#update' , as: 'update_book'
 
 # resources :books
 # Railsのルーティングは、「上からの記載順に」マッチ
