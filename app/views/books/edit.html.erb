@@ -1,4 +1,4 @@
-<h1>ここは編集画面</h1>
+<h1>Editing Book</h1>
 
 <%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
 
@@ -8,8 +8,7 @@
   <h4>本文</h4>
   <%= f.text_area :body %>
 
-  <%= f.submit '保存' %>
+  <%= f.submit 'Update Book' %>
 
 <% end %>
-<%= link_to "詳細", show_path(@book.id) %>
-<%= link_to "一覧&新規", new_path %>
+<p><span><%= link_to "Show", show_path(@book.id) %></span>|<span><%= link_to "Back", new_path %></span></p>
