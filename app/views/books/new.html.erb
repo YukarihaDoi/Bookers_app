@@ -5,15 +5,15 @@
 
 <% @books.each do |book| %>
 
-  <p>タイトル</p>
-  <span>
-   <%= link_to book.title,show_path(book.id) %>
-  </span>
+<p>タイトル</p>
+<span>
+<%= link_to book.title,show_path(book.id) %>
+</span>
 
-  <p>内容</p>
-  <span>
-   <%= link_to book.body, show_path(book.id)%>
-   </span>
+<p>内容</p>
+ <span>
+<%= link_to book.body, show_path(book.id)%>
+ </span>
 <% end %>
 
 
@@ -22,7 +22,7 @@
 <h1>ここは新規投稿表示</h1>
 
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました>
+  <<%= @book.errors.count %>件のエラーが発生しました>
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>

@@ -1,8 +1,8 @@
 class BooksController < ApplicationController
   # 新規作成/一覧画面(画面内)
   def new
-  @book = Book.new
   @books = Book.all
+  @book = Book.new
   end
 
   def index
@@ -12,16 +12,16 @@ class BooksController < ApplicationController
   # 新規作成（コントローラ内)
   def create
     @book = Book.new(book_params)
+    if @book.save
+      redirect_to show_path(@book.id)
+    else
+      render :new
+    end
   end
 
   # 詳細画面
   def show
     @book = Book.find(params[:id])
-    if @book.save
-    redirect_to show_path(@book.id)
-    else
-    render :new
-    end
   end
 
   # 編集(edit&update)
