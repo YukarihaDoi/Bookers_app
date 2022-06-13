@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   get 'books/index'  => 'books#index'
   get 'books' => 'books#index'
 
-  get 'books/:id' => 'books#show',as:'show'
+  get 'books/new/:id' => 'books#show'
+  get 'books/:id' => 'books#show',as: 'show'
 
-  get 'books/edit'  => 'books#edit'
 
+  get 'books/:id/edit' => 'books#edit', as: 'edit_book'
+  patch 'books/:id' => 'books#update', as: 'update_book'
 
 # resources :books
 # Railsのルーティングは、「上からの記載順に」マッチ
