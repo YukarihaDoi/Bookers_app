@@ -11,9 +11,9 @@ class BooksController < ApplicationController
 
   # 新規作成（コントローラ内)
   def create
-    
+
     @book = Book.new(book_params)
-    if @bogiok.save
+    if @book.save
       redirect_to show_path(@book.id)
     else
       @books = Book.all

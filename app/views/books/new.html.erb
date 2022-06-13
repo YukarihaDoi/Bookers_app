@@ -6,14 +6,21 @@
 <% @books.each do |book| %>
 
 <p>タイトル</p>
-<span>
+
+<div class="list-comment">
+
+<span class="list-title">
 <%= link_to book.title,show_path(book.id) %>
 </span>
 
 <p>内容</p>
- <span>
+ <span class="list-body">
 <%= link_to book.body, show_path(book.id)%>
  </span>
+ </div>
+ <div></div>
+ <div></div>
+ <div></div>
 <% end %>
 
 
