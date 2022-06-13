@@ -2,14 +2,14 @@ Rails.application.routes.draw do
 
   get '/top' => 'homes#top'
   get 'books/new'  => 'books#new'
-  
+
   post 'books' => 'books#create'
-  
+
   get 'books/index'  => 'books#index'
   get 'books' => 'books#index'
-  
-  get 'books/new/:id' => 'books#show'
-  
+
+  get 'books/:id' => 'books#show',as:'show'
+
   get 'books/edit'  => 'books#edit'
 
 

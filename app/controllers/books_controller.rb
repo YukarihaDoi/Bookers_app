@@ -1,16 +1,16 @@
 class BooksController < ApplicationController
- 
+
   # 新規作成(画面内)
   def new
   @book = Book.new
   @books = Book.all
   end
-  
-  
+
+
   def index
     @books = Book.all
   end
-  
+
   # 新規作成（コントローラ内)
   def create
     book = Book.new(book_params)
@@ -19,7 +19,8 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])  
+    @book = Book.find(params[:id])
+    
   end
 
   # 編集(edit&update)
