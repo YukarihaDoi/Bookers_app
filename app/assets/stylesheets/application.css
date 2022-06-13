@@ -14,33 +14,97 @@
  *= require_self
  */
  /*すべてのビューに反映されるCSSファイル*/
+
+ /*全体*/
  * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-header, h1, nav, .list-comment {
-  font-family: 'Kaushan', cursive, sans-serif;
-}
 
-header {
-  width: 90%;
-  padding: 15px 0;
-  margin: 30px auto 0;
-  text-align: center;
-  border-top: solid 5px #000000;
+body{
+  margin:33px;
 }
-
-header .headline {
-  font-size: 32px;
-}
-
-nav {
-  width: 880px;
+main {
+  width: 100%;
   margin: 0 auto;
-  border-top: solid 0.7px #000000;
-  border-bottom: solid 0.7px #000000;
 }
+
+h1{
+  font-weight: bold;
+}
+
+/*トップ*/
+.top-coment p{
+  display: block;
+  margin:33px;
+  font-size:13px;
+}
+.top-coment span{
+  display: block;
+  margin:33px;
+  font-size:13px;
+}
+
+/*インデックス*/
+
+.index{
+  display: block
+}
+
+table{
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+.box-title{
+  width:150px;
+
+}
+.box-body{
+  width:200px;
+}
+.box-link{
+  width:100px;
+}
+.index tr{
+  font-weight: bold;
+  text-align:left;
+  padding: 10px 0;
+  margin: 0 auto;
+
+}
+.list-title {
+  font-size: 12px;
+}
+.list-body {
+  font-size: 12px;
+}
+/*header, nav, .list-comment {*/
+/*  font-family: 'Kaushan', cursive, sans-serif;*/
+/*}*/
+
+/*header {*/
+/*  width: 90%;*/
+/*  padding: 15px 0;*/
+/*  margin: 30px auto 0;*/
+/*  text-align: center;*/
+/*  border-top: solid 5px #000000;*/
+/*}*/
+
+/*header .headline {*/
+/*  font-size: 32px;*/
+/*}*/
+
+/*nav {*/
+/*  width: 880px;*/
+/*  margin: 0 auto;*/
+/*  border-top: solid 0.7px #000000;*/
+/*  border-bottom: solid 0.7px #000000;*/
+/*}*/
 
 .nav-list {
   text-align: center;
@@ -52,11 +116,6 @@ nav {
   list-style: none;
   display: inline-block;
   margin: 0 20px;
-}
-
-main {
-  width: 880px;
-  margin: 0 auto;
 }
 
 .list-wrap {
@@ -78,19 +137,3 @@ main {
   bottom: 0;
 }
 
-.list-body {
-  color: gray;
-  font-size: 12px;
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.list-title {
-  display: block;
-  font-size: 18px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
