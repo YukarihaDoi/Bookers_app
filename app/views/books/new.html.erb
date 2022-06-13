@@ -1,4 +1,7 @@
 <h1>ここは一覧表示</h1>
+<!--= link_to "編集", edit_book_path(@book.id) %>-->
+<!--= link_to "削除", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>-->
+
 
 <% @books.each do |book| %>
 
@@ -12,6 +15,8 @@
    <%= link_to book.body, show_path(book.id)%>
    </span>
 <% end %>
+
+
 
 
 <h1>ここは新規投稿表示</h1>
