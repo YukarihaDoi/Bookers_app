@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   delete 'books/:id' => 'books#destroy', as: 'destroy_book'
 #   delete 'books/new' => 'books#destroy', as: 'destroy_book'
 
-# resources :books
+ resources :books
 # Railsのルーティングは、「上からの記載順に」マッチ
  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
