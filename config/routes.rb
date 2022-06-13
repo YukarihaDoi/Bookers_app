@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-
+ 
+  root to: 'homes#top'
   get '/top' => 'homes#top'
+  
   get 'books/new'  => 'books#new' ,as:'new'
-
   post 'books' => 'books#create'
 
-  # get 'books/index'  => 'books#index'
+  get 'books/index'  => 'books#new'
   # get 'books' => 'books#index'
 
   get 'books/new/:id' => 'books#show'
