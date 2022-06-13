@@ -9,7 +9,7 @@
   <span>
    <%= link_to book.title,show_path(book.id) %>
   </span>
-  
+
   <p>内容</p>
   <span>
    <%= link_to book.body, show_path(book.id)%>
@@ -20,6 +20,15 @@
 
 
 <h1>ここは新規投稿表示</h1>
+
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました>
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <!-- form_with部分 -->
  <%= form_with model: @book do |f| %>
