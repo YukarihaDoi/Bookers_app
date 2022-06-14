@@ -48,12 +48,12 @@
 
 
 <% if @book.errors.any? %>
-  <ul>
-   <%= @book.errors.count %>errors prohibited this book from being saved:
+  <%= @book.errors.count %>errors prohibited this book from being saved:
     <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %>_error</li>
+      <div class="Error-message">
+       <%= message %>_error
+      </div>
     <% end %>
-  </ul>
 <% end %>
 
 
@@ -69,7 +69,7 @@
   <%= f.submit 'Create Book' %>
 
  <% end %>
- 
+
  <!--投稿に成功しサクセスメッセージが表示されるか (FAIL2-->
  <!--更新に成功しサクセスメッセージが表示されるか (FAILED - 6)-->
  <!--     更新に失敗しエラーメッセージが表示されるか (FAILE-->

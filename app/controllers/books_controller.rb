@@ -20,7 +20,6 @@ class BooksController < ApplicationController
     else
       @books = Book.all
       render :index
-      #index_path.to have_content 'error'
 
     end
   end
@@ -40,8 +39,7 @@ class BooksController < ApplicationController
       flash[:notice] = "successfully"
       redirect_to show_path(@book.id)
     else
-       @book = Book.find(params[:id])
-       render :edit
+      render :edit
 
     end
   end

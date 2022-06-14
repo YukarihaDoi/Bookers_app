@@ -83,6 +83,9 @@ table{
 .list-body {
   font-size: 12px;
 }
+.Error-message{
+  color:red;
+}
 /*header, nav, .list-comment {*/
 /*  font-family: 'Kaushan', cursive, sans-serif;*/
 /*}*/

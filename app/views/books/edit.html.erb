@@ -1,12 +1,11 @@
 <h1>Editing Book</h1>
 
 <% if @book.errors.any? %>
-  <ul>
-   <%= @book.errors.count %>errors prohibited this book from being saved:
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %>_error</li>
+<% @book.errors.full_messages.each do |message| %>
+      <div class="Error-message">
+        <%= message %>_error
+      </div>
     <% end %>
-  </ul>
 <% end %>
 
 <%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
@@ -21,4 +20,3 @@
 
 <% end %>
 <p><span><%= link_to "Show", show_path(@book.id) %></span>|<span><%= link_to "Back", books_path %></span></p>
-<!--更新に成功しサクセスメッセージが表示されるか (FAIL-->
