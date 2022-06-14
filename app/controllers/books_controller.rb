@@ -5,20 +5,22 @@ class BooksController < ApplicationController
   @book = Book.new
   end
 
-  def index
-    @books = Book.all
-  end
+  # def index
+  #   @books = Book.all
+  # end
 
   # 新規作成（コントローラ内)
   def create
 
     @book = Book.new(book_params)
     if @book.save
+      flash[:notice] = "successfully"
       redirect_to show_path(@book.id)
 
     else
       @books = Book.all
       render :index
+      #index_path.to have_content 'error'
 
     end
   end
@@ -33,20 +35,22 @@ class BooksController < ApplicationController
   end
 
   def update
-    book = Book.find(params[:id])
-
-    if book.update(book_params)
-       redirect_to show_path(book.id)
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      flash[:notice] = "successfully"
+      redirect_to show_path(@book.id)
     else
        @book = Book.find(params[:id])
        render :edit
+
     end
   end
   def destroy
     book = Book.find(params[:id])  # データ（レコード）を1件取得
     book.destroy  # データ（レコード）を削除
-    redirect_to '/books/new'  # 投稿一覧画面へリダイレクト
+    redirect_to '/books'  # 投稿一覧画面へリダイレクト
   end
+
 
    # ストロングパラメータ
    private

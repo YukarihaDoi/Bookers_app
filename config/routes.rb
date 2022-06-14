@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
- 
+
   root to: 'homes#top'
   get '/top' => 'homes#top'
-  
-  get 'books/new'  => 'books#new' ,as:'new'
+
+  get '/books'  => 'books#index' ,as:'books'
   post 'books' => 'books#create'
 
-  get 'books/index'  => 'books#new'
+  # get 'books/index'  => 'books#new'
   # get 'books' => 'books#index'
 
   get 'books/new/:id' => 'books#show'
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'books/:id/edit' => 'books#edit', as: 'edit_book'
   patch 'books/:id' => 'books#update', as: 'update_book'
-  
+
   delete 'books/:id' => 'books#destroy', as: 'destroy_book'
 #   delete 'books/new' => 'books#destroy', as: 'destroy_book'
 
